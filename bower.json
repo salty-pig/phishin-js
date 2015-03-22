@@ -1,0 +1,16 @@
+{
+  "name": "phishin-js",
+  "main": "phishin-js.js",
+  "version": "0.0.1",
+  "authors": [
+    "Lucas Holmquist <lholmqui@redhat.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

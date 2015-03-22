@@ -1,0 +1,16 @@
+{
+  "name": "phishin-js",
+  "version": "0.0.1",
+  "description": "Javascript Library for http://phish.in/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Lucas Holmquist",
+    "email": "lucas.holmquist@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.2.1"
+  }
+}
