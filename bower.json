@@ -1,7 +1,7 @@
 {
   "name": "phishin-js",
-  "main": "phishin-js.js",
-  "version": "0.0.1",
+  "main": "dist/phishin-js.js",
+  "version": "0.0.1-dev",
   "authors": [
     "Lucas Holmquist <lholmqui@redhat.com>"
   ],
@@ -12,5 +12,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "qunit": "~1.17.1"
+  }
 }
