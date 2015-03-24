@@ -1,7 +1,7 @@
 {
   "name": "phishin-js",
   "main": "dist/phishin-js.js",
-  "version": "0.0.1-dev",
+  "version": "0.0.2",
   "authors": [
     "Lucas Holmquist <lholmqui@redhat.com>"
   ],
