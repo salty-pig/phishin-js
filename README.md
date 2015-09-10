@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lholmquist/phishin-js.svg)](https://travis-ci.org/lholmquist/phishin-js)
+[![Build Status](https://travis-ci.org/salty-pig/phishin-js.svg)](https://travis-ci.org/salty-pig/phishin-js)
 
 ### A Javascript Library for http://phish.in.
 
