@@ -2,6 +2,8 @@
 
 ### A Javascript Library for http://phish.in.
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/salty-pig/phishin-js.svg)](https://greenkeeper.io/)
+
 ## Pre-Reqs
 
 * Node
