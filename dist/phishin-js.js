@@ -1,4 +1,4 @@
-/*! phishin-js -  0.0.1 - 2015-03-24 */
+/*! phishin-js - 0.0.2 - 2017-07-28 */
 var Phish = {};
 
 Phish.Phishin = function (settings) {
@@ -8,7 +8,7 @@ Phish.Phishin = function (settings) {
 
     var baseUrl = 'http://phish.in/api/v1/';
 
-    ['Eras', 'Years', 'Songs', 'Tours', 'Shows', 'Tracks'].forEach(function (value) {
+    ['Eras', 'Years', 'Songs', 'Tours', 'Shows', 'Tracks', 'Venues'].forEach(function (value) {
         this['get'+value] = function (id, params) {
             return this._get(value.toLowerCase(), id, params);
         };
@@ -16,8 +16,41 @@ Phish.Phishin = function (settings) {
 
     this._get = function (type, id, params) {
 
-        var url = baseUrl + type + (id ? '/' + id + '/' : '/');
-        return Phish.fetch(url);
+        var urlParamed, url, self = this;
+
+        urlParamed = url = baseUrl + type + (id ? '/' + id + '/' : '/');
+
+        if (params) {
+            urlParamed = url + '?' + params.join('&');
+        }
+
+        return Phish.fetch(urlParamed).then(function (response) {
+            ['next', 'previous'].forEach(function (value) {
+                response[value] = (function () {
+                    return function () {
+                        if (response.page === response.total_pages) {
+                            return Promise.resolve(null);
+                        }
+
+                        var page = response.page;
+
+                        if (value === 'next') {
+                            page++;
+                        } else {
+                            page--;
+                        }
+
+                        if (response.page < 1) {
+                            return Promise.resolve(null);
+                        }
+
+                        return self._get(type, id, ['page=' + page]);
+                    };
+                })();
+            });
+
+            return response;
+        });
     };
 
     return this;
