@@ -3,7 +3,9 @@
   "version": "0.0.2",
   "description": "Javascript Library for http://phish.in/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": {
     "name": "Lucas Holmquist",
@@ -17,5 +19,9 @@
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-qunit": "^1.2.0",
     "grunt-contrib-uglify": "^3.1.0"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.348.2"
   }
 }
