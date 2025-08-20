@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: phishin-js
+  annotations:
+    github.com/project-slug: salty-pig/phishin-js
+spec:
+  type: other
+  lifecycle: unknown
+  owner: user:default/guest
